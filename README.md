@@ -9,7 +9,7 @@ The primary objective of this project is to classify 1D waveform data (ultrasoni
 During the development phase, an extensive comparative analysis was conducted involving **1D CNN**, **InceptionTime**, and **ConvNeXt1D** architectures. This repository highlights the final, optimal implementation centered around the high-capacity model, supported by rigorous experimental results.
 
 ## Model Selection & Results Summary
-Through rigorous comparative experiments, the advanced architecture (detailed in the `models/` directory) demonstrated superior feature extraction capabilities on complex 1D morphological signals compared to baseline models.
+Through rigorous comparative experiments, the advanced architecture (detailed in `model.py`) demonstrated superior feature extraction capabilities on complex 1D morphological signals compared to baseline models.
 
 **Key Experimental Findings:**
 *(Note: Detailed performance charts and confusion matrices are available in the `/results` directory.)*
@@ -25,7 +25,8 @@ A critical component of this project's success lies in the nuanced data preproce
 Therefore, this pipeline strategically excludes Gaussian noise from the augmentation process, opting instead for domain-specific transformations (like magnitude scaling and precise temporal shifts) that preserve the integrity of the crucial failure signatures. This decision was pivotal in pushing the model's accuracy past the 80% threshold.
 
 ## Repository Structure
-* `/models`: Contains the implementation of the optimal network architecture.
-* `/utils`: Data loading, preprocessing (normalization, alignment), and custom augmentation logic.
-* `/results`: Visualizations of the comparative analysis, training curves, and confusion matrices.
-* `train.py`: Main training loop.
+* `model.py`: Contains the implementation of the optimal network architecture (ResNet1D + MultiScale + SEBlock).
+* `dataset.py`: Data loading, preprocessing (normalization, padding), and custom augmentation logic.
+* `train.py`: Main training and evaluation loop.
+* `predict.py`: Standalone inference script for single-file prediction.
+* `/results`: Visualizations of the comparative analysis, training curves, ROC, and confusion matrices.
