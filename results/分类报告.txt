@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+          正常      0.970     0.960     0.965       100
+          断裂      0.960     0.970     0.965       100
+
+    accuracy                          0.965       200
+   macro avg      0.965     0.965     0.965       200
+weighted avg      0.965     0.965     0.965       200
